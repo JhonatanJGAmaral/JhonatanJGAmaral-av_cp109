@@ -4,56 +4,9 @@
       <h6>System bar</h6>
     </v-system-bar>
 
-    <v-app-bar
-      color="#6A76AB"
-      dark
-      absolute
-      shrink-on-scroll
-      prominent
-      src="https://picsum.photos/1920/1080?random"
-      fade-img-on-scroll
-      scroll-target="#scrolling-techniques-3"
-      permanent
-      right
-      class="appbar"
-      app
-    >
-      <template v-slot:img="{ props }">
-        <v-img
-          v-bind="props"
-          gradient="to top right, rgba(100,115,201,.7), rgba(25,32,72,.7)"
-        ></v-img>
-      </template>
+    <AppBar></AppBar>
+    <Home></Home>
 
-      <v-app-bar-nav-icon src="">
-        <!-- <a href=""></a> -->
-      </v-app-bar-nav-icon>
-
-      <v-app-bar-title>Dashboard</v-app-bar-title>
-
-      <v-spacer></v-spacer>
-
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-heart</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-dots-vertical</v-icon>
-      </v-btn>
-
-      <template v-slot:extension>
-        <v-tabs align-with-title>
-          <v-tab class="galery"> Galery</v-tab>
-          <v-tab>Repositório</v-tab>
-          <v-tab>Portfólio</v-tab>
-        </v-tabs>
-      </template>
-    </v-app-bar>
-    <!-- --------------------------------------------- -->
     <!-- <v-navigation-drawer>
       <div class="d-flex align-left"></div>
     </v-navigation-drawer> -->
@@ -72,8 +25,10 @@
             </v-avatar>
             <!-- </v-row> -->
           </template>
-          <v-list-item-title class="text-h6"> Profile </v-list-item-title>
-          <v-list-item-subtitle> career </v-list-item-subtitle>
+          <v-list-item-title class="text-h6">
+            Trade President
+          </v-list-item-title>
+          <v-list-item-subtitle> About us </v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
 
@@ -93,13 +48,13 @@
       <!-- card -->
       <v-card class="mx-auto" max-width="344">
         <v-card-text>
-          <div>About me</div>
+          <div>About our company</div>
           <p class="text-h4 text--primary">DO•IT•BY•YOURSELF</p>
           <!-- places•jobs•engagements•contribuitions -->
           <p>community</p>
           <div class="text--primary">
-            well meaning and kindly.<br />
-            "a benevolent smile"
+            Your home's here!<br />
+            "a benevolent smilling place"
           </div>
         </v-card-text>
         <v-card-actions>
@@ -108,30 +63,9 @@
       </v-card>
       <!-- card -->
     </v-navigation-drawer>
-    <!-- CAROUSEL -->
-    <div class="tidyitup">
-      <v-carousel v-model="model" class="ajusts" app>
-        <v-carousel-item v-for="(color, i) in colors" :key="color">
-          <v-sheet :color="color" height="100%" tile>
-            <v-row class="fill-height" align="center" justify="center">
-              <div class="text-h2">Slide {{ i + 1 }}</div>
-            </v-row>
-          </v-sheet>
-        </v-carousel-item>
-      </v-carousel>
 
-      <template>
-        <v-carousel class="ajusts-1" app>
-          <v-carousel-item
-            v-for="(item, i) in items"
-            :key="i"
-            :src="item.src"
-            reverse-transition="fade-transition"
-            transition="fade-transition"
-          ></v-carousel-item>
-        </v-carousel>
-      </template>
-    </div>
+    <!-- CAROUSEL -->
+    <v-main> <router-view></router-view></v-main>
     <!-- FOOTER -->
     <v-footer dark padless app>
       <v-card flat tile class="indigo lighten-1 white--text text-center">
@@ -167,14 +101,21 @@
       </v-card>
     </v-footer>
     <!-- --------------------------------------------- -->
-    <v-main>
-      <!-- <router-view /> -->
-    </v-main>
   </v-app>
 </template>
 
 <script>
+import AppBar from '@/components/AppBar'
+import Home from '@/views/Home'
+
 export default {
+  name: 'App',
+  components: {
+    AppBar
+  },
+  views: {
+    Home
+  },
   data() {
     return {
       items: [
@@ -202,45 +143,16 @@ export default {
   }
 }
 </script>
-
 <style scoped>
 .appbar {
   /* margin-top: 200px; */
 }
+
 h6 {
   color: rgb(132, 0, 255);
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .margins {
   margin-bottom: 0;
-}
-
-.galery:hover .ajusts {
-  display: none;
-}
-
-.galery:active.ajusts {
-  display: none;
-}
-.ajusts {
-  margin-top: 264px;
-  margin-left: 264px;
-  margin-right: auto;
-  width: 800px;
-  height: 1900px;
-  display: inline;
-}
-
-.ajusts-1 {
-  margin-top: 264px;
-  margin-left: 10px;
-  margin-right: auto;
-  width: 1200px;
-  height: 1900px;
-  display: inline;
-}
-
-.tidyitup {
-  display: flex;
 }
 </style>
