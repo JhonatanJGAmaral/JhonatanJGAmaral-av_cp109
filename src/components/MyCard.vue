@@ -3,9 +3,9 @@
     <v-img
       class="white--text align-end"
       height="200px"
-      src="https://images.dwell.com/photos-6063391372700811264/6599016339180535808-large/on-a-hillside-in-los-angeles-architect-clive-wilkinson-created-a-three-story-home-for-himself-his-wife-elisabeth-and-their-children.jpg"
+      src="https://images.adsttc.com/media/images/533f/84a6/c07a/80d9/e300/00c1/large_jpg/seaside01.jpg?1396671625"
     >
-      <v-card-title>Top 10 Boston Bungallows</v-card-title>
+      <v-card-title>Chose your home near to the beach</v-card-title>
     </v-img>
 
     <v-card-subtitle class="pb-0"> Number 10 </v-card-subtitle>
